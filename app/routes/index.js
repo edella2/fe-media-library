@@ -11,8 +11,12 @@ export default Ember.Route.extend({
     }),
     // using descending sort
     top_five_artists: this.store.findAll('artist', { reload: true }).
-      then(artist => artist.sortBy('total_albums_sold').reverse().slice(0,5))
+      then(artist => artist.sortBy('total_albums_sold').reverse().slice(0,5)),
+
+    albums: this.store.query('album', { reload: true}),
+    album_years: Ember.computed.mapBy('albums.@each.year', 'year')
     });
+
   },
 
   queryParams: {

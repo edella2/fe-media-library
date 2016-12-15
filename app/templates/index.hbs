@@ -1,3 +1,10 @@
+<h1>Years</h1>
+<ul>
+  {{#each model.albums as |album|}}
+    <li><p>{{album.year}}</p></li>
+  {{/each}}
+</ul>
+
 <h1>Top Five Artists</h1>
 <ul>
   {{#each model.top_five_artists as |artist|}}
