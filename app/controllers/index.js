@@ -9,4 +9,5 @@ export default Ember.Controller.extend({
   ],
   sort_on: 'name',
   sort_direction: 'asc',
+
 });

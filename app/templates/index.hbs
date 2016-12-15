@@ -1,6 +1,12 @@
+<h1>Top Five Artists</h1>
+<ul>
+  {{#each model.top_five_artists as |artist|}}
+    <li>{{#link-to 'artist' artist}}{{artist.name}} : {{artist.total_albums_sold}}{{/link-to}}</li>
+  {{/each}}
+</ul>
 <h1>Artists list</h1>
 <ul>
-  {{#each model as |artist|}}
+  {{#each model.artists as |artist|}}
     <li>{{#link-to 'artist' artist}}{{artist.name}} : {{artist.total_albums_sold}}{{/link-to}}</li>
   {{/each}}
 </ul>
