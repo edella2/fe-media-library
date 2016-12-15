@@ -4,7 +4,10 @@
 <p>founding year: {{model.founding_year}}</p>
 <ul>
   {{#each model.album_ids as |album|}}
-    <p>each model</p>
-    <li>{{#link-to 'album' album}}{{album.name}}{{/link-to}}</li>
+
+    <li>
+      {{#link-to 'album' album}}{{album.name}}{{/link-to}}
+      <p>Albums sold: {{album.total_sold}}</p>
+    </li>
   {{/each}}
 </ul>
