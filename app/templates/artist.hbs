@@ -3,7 +3,8 @@
 <p>based in: {{model.based_in}}</p>
 <p>founding year: {{model.founding_year}}</p>
 <ul>
-  {{#each model.album as |album|}}
+  {{#each model.album_ids as |album|}}
+    <p>each model</p>
     <li>{{#link-to 'album' album}}{{album.name}}{{/link-to}}</li>
   {{/each}}
 </ul>
