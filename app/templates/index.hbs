@@ -1,7 +1,7 @@
 <h1>Years</h1>
 <ul>
-  {{#each model.albums as |album|}}
-    <li><p>{{album.year}}</p></li>
+  {{#each model.years as |year|}}
+    <li><p>{{year.year}} | {{year.count}}</p></li>
   {{/each}}
 </ul>
 
