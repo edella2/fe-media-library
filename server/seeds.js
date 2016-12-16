@@ -33,7 +33,7 @@ module.exports = {
         var album = {
           artist_id: artist.id,
           name: faker.company.catchPhrase(),
-          year: faker.date.between(artist.founding_year, nowDate).year,
+          year: faker.date.between(artist.founding_year, nowDate).getFullYear(),
           total_sold: faker.random.number({min: 1000, max: 99999999}),
           comment_ids: []
         };

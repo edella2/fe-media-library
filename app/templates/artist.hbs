@@ -1,0 +1,13 @@
+<h3>Aritst - Show</h3>
+<p>Name: {{model.name}}</p>
+<p>based in: {{model.based_in}}</p>
+<p>founding year: {{model.founding_year}}</p>
+<ul>
+  {{#each model.album_ids as |album|}}
+
+    <li>
+      {{#link-to 'album' album}}{{album.name}}{{/link-to}}
+      <p>Albums sold: {{album.total_sold}}</p>
+    </li>
+  {{/each}}
+</ul>
