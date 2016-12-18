@@ -22,6 +22,7 @@
     "active-model-adapter": "2.1.1",
     "broccoli-asset-rev": "^2.2.2",
     "ember-ajax": "0.7.1",
+    "ember-bootstrap": "0.11.3",
     "ember-cli": "2.4.2",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.5",
@@ -39,10 +40,10 @@
     "ember-export-application-global": "^1.0.4",
     "ember-load-initializers": "^0.5.0",
     "ember-resolver": "^2.0.3",
-    "faker": "3.1.0",
-    "loader.js": "^4.0.0",
     "express": "^4.13.3",
+    "faker": "3.1.0",
     "glob": "^4.5.3",
+    "loader.js": "^4.0.0",
     "morgan": "^1.6.1"
   }
 }
