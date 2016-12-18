@@ -1,11 +1,20 @@
-<h3>Aritst - Show</h3>
-<p>Name: {{model.name}}</p>
-<p>Artist: {{#link-to 'artist' model.artist_id}}{{model.artist_id.name}}{{/link-to}}</p>
-<p>total sold: {{model.total_sold}}</p>
-<ul>
-  {{#each model.comment_ids as |comment|}}
-    <h2>Author: {{comment.author}}</h2>
-    <p>Message:</p>
-    <p>{{comment.message}}</p>
-  {{/each}}
-</ul>
+<div class="row">
+  <div class="col-md-12">
+    <p>Name: {{model.name}}</p>
+    <p>Artist: {{#link-to 'artist' model.artist_id}}{{model.artist_id.name}}{{/link-to}}</p>
+    <p>total sold: {{model.total_sold}}</p>
+  </div>
+
+  <div class="col-md-12">
+    <h3 class="text-center">Comments</h3>
+    <ul>
+      {{#each model.comment_ids as |comment|}}
+        <li class="list-group-item">
+          <h4>Author: {{comment.author}}</h4>
+          <p>Message:</p>
+          <p>{{comment.message}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
