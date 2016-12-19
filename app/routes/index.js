@@ -51,6 +51,38 @@ export default Ember.Route.extend({
         });
         return years_objects;
       }),
+
+      locations: this.get('store').findAll('artist')
+      .then((artists) => {
+        let locations = [];
+        let unique_locations = [];
+        let locations_objects = [];
+
+        artists.forEach((artist) => {
+          locations.push(artist.get('based_in'));
+        });
+
+        locations.forEach((location) => {
+          if(unique_locations.indexOf(location) === -1) {
+            unique_locations.push(location);
+          }
+        });
+
+        unique_locations.forEach((unique_location) => {
+          let count = 0;
+          locations.forEach((location) => {
+            if(location === unique_location) {
+              count += 1;
+            }
+          });
+          let location_object = {
+            location: unique_location,
+            count: count
+          };
+          locations_objects.push(location_object);
+        });
+        return locations_objects;
+      })
     });
   },
 

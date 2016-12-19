@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-4">
     <h1>Top Five Artists</h1>
     <ul>
       {{#each model.top_five_artists as |artist|}}
@@ -15,8 +15,17 @@
     </ul>
   </div>
 
-  <div class="col-md-3">
-    <h1>Years</h1>
+  <div class="col-md-4">
+    <h1>Aritst Locations</h1>
+    <ul>
+      {{#each model.locations as |location|}}
+        <li><p>{{location.location}} | {{location.count}}</p></li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h1>Albums by Years</h1>
     <ul>
       {{#each model.years as |year|}}
         <li><p>{{year.year}} | {{year.count}}</p></li>
