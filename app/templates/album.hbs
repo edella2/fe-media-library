@@ -7,6 +7,21 @@
   </div>
 
   <div class="col-md-12">
+    <h3 class="text-center">Add comment</h3>
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        {{input type="text" class="form-control" value=author placeholder="Enter your name..."}}
+      </div>
+      <div class="form-group">
+        <label>Comment</label>
+        {{textarea type="text" class="form-control" value=message placeholder="Leave a comment..."}}
+      </div>
+      <button class="btn btn-primary" {{action 'add_comment' model}}>Submit</button>
+    </form>
+  </div>
+
+  <div class="col-md-12">
     <h3 class="text-center">Comments</h3>
     <ul>
       {{#each model.comment_ids as |comment|}}
@@ -14,6 +29,7 @@
           <h4>Author: {{comment.author}}</h4>
           <p>Message:</p>
           <p>{{comment.message}}</p>
+          <button class="btn btn-primary" {{action 'delete_comment' comment}}>Delete</button>
         </li>
       {{/each}}
     </ul>
