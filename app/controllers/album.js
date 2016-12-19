@@ -9,6 +9,4 @@ export default Ember.Controller.extend({
   ],
   sort_on: 'updated_at',
   sort_direction: 'desc',
-  author: '',
-  message: '',
 });

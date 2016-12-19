@@ -21,23 +21,22 @@ export default Ember.Route.extend({
 
   actions: {
     delete_comment(comment) {
+      this.controller.get('model.comment_ids').removeObject(comment);
       comment.destroyRecord();
+      this.controller.get('model').save();
     },
     add_comment(model) {
-      console.log("In action")
-      console.log(this.controller.get('author'))
-      console.log(this.controller.get('message'))
-      console.log(model)
-      console.log(model.name)
+
       let comment = this.store.createRecord('comment', {
         author: this.controller.get('author'),
         message: this.controller.get('message'),
         album: model
       });
-      console.log("comment object")
-      console.log(comment.get('album'))
-      console.log(comment.save())
-      comment.save()
+
+      comment.save().then((comment) => {
+        model.get('comment_ids').addObject(comment);
+        model.save();
+      });
     },
   }
 });
